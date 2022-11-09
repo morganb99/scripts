@@ -1,0 +1,10 @@
+#!/bin/bash
+SERVICE="spotify"
+if pgrep -x "$SERVICE" >/dev/null
+then
+    echo "$SERVICE is running"
+    sp play
+else
+    echo "$SERVICE stopped"
+    playerctl play-pause 
+fi
